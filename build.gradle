@@ -1,0 +1,48 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'com.pivaiot.common'
+version = '1.0.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// 依赖库的版本
+ext {
+  guavaVersion = '20.0'
+  bitwalkerUserAgentUtilsVersion = '1.21'
+  commonsLang3Version = '3.7'
+  lombokVersion = '1.16.22'
+  jpaApiVersion = '1.0.2.Final'
+  junitVersion = '4.12'
+  jacksonVersion = '2.9.6'
+  springVersion = '5.0.10.RELEASE'
+  log4jOverSlf4jVersion = '1.7.25'
+  commonsCodecVersion = '1.11'
+  jodaTimeVersion = '2.9.9'
+  lombokVersion = '1.18.0'
+  dom4jVersion = '1.6.1'
+  servletApiVersion = '4.0.1'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+  compileOnly("org.projectlombok:lombok:$lombokVersion")
+  implementation("com.google.guava:guava:$guavaVersion")
+  implementation("org.apache.commons:commons-lang3:$commonsLang3Version")
+  implementation("eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion")
+  implementation("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaApiVersion")
+  implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+  implementation("org.springframework:spring-beans:$springVersion")
+  implementation("org.slf4j:log4j-over-slf4j:$log4jOverSlf4jVersion")
+  implementation("dom4j:dom4j:$dom4jVersion")
+  implementation("commons-codec:commons-codec:$commonsCodecVersion")
+  implementation("joda-time:joda-time:$jodaTimeVersion")
+  implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
+
+  testCompile("junit:junit:$junitVersion")
+}
