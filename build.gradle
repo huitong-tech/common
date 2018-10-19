@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'maven'
 
 group = 'com.pivaiot.common'
-version = '1.0.0'
+version = '1.0.1'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -18,7 +18,7 @@ ext {
   junitVersion = '4.12'
   jacksonVersion = '2.9.6'
   springVersion = '5.0.10.RELEASE'
-  log4jOverSlf4jVersion = '1.7.25'
+  slf4jApiVersion = '1.7.25'
   commonsCodecVersion = '1.11'
   jodaTimeVersion = '2.9.9'
   lombokVersion = '1.18.0'
@@ -39,7 +39,7 @@ dependencies {
   implementation("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaApiVersion")
   implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
   implementation("org.springframework:spring-beans:$springVersion")
-  implementation("org.slf4j:log4j-over-slf4j:$log4jOverSlf4jVersion")
+  implementation("org.slf4j:slf4j-api:$slf4jApiVersion")
   implementation("dom4j:dom4j:$dom4jVersion")
   implementation("commons-codec:commons-codec:$commonsCodecVersion")
   implementation("joda-time:joda-time:$jodaTimeVersion")
