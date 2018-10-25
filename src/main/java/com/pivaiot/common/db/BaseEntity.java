@@ -56,11 +56,11 @@ public abstract class BaseEntity<T> implements ToModel<T>, Serializable {
     public T toModel() {
         Type genType = getClass().getGenericSuperclass();
         Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
-        Class<T> dtoClass = (Class) params[0];
+        Class<T> modelClass = (Class) params[0];
         try {
-            T data = dtoClass.newInstance();
-            BeanUtil.copyProperties(this, data);
-            return  data;
+            T model = modelClass.newInstance();
+            BeanUtil.copyProperties(this, model);
+            return model;
         } catch (Exception e) {
             e.printStackTrace();
         }
