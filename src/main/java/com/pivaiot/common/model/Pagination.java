@@ -1,4 +1,4 @@
-package com.pivaiot.common.data;
+package com.pivaiot.common.model;
 
 import com.google.common.collect.Lists;
 import lombok.Data;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
  * @param <T> 分页数组中的数据项类型
  */
 @Data
-public class Pagination<T> implements BaseData {
+public class Pagination<T> implements BaseModel {
 
     // 总记录数　
     private Long total;
@@ -58,11 +58,11 @@ public class Pagination<T> implements BaseData {
         return paginationMapped;
     }
 
-    public static <T> Pagination newPagination(Long totalCount, Integer page, Integer pageSize, List<T> list) {
+    public static <T> Pagination craft(Long totalCount, Integer page, Integer pageSize, List<T> list) {
         return new Pagination<>(totalCount, page, pageSize, list);
     }
 
-    public static <T> Pagination<T> emptyPagination() {
+    public static <T> Pagination<T> empty() {
         return new Pagination<>();
     }
 }
