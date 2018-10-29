@@ -58,9 +58,9 @@ public class JsonUtil {
      * @param json 字符串
      * @return 字典Map
      */
-    public static Map<String, String> toMap(String json) {
-        TypeReference<Map<String, String>> typeRef
-            = new TypeReference<Map<String, String>>() {};
+    public static Map<String, Object> toMap(String json) {
+        TypeReference<Map<String, Object>> typeRef
+            = new TypeReference<Map<String, Object>>() {};
 
         try {
             return mapper.readValue(json, typeRef);
