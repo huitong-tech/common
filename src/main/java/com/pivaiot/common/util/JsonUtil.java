@@ -54,6 +54,23 @@ public class JsonUtil {
     }
 
     /**
+     * 讲一个json字符串转成键值字典
+     * @param json 字符串
+     * @return 字典Map
+     */
+    public static Map<String, String> toMap(String json) {
+        TypeReference<Map<String, String>> typeRef
+            = new TypeReference<Map<String, String>>() {};
+
+        try {
+            return mapper.readValue(json, typeRef);
+        } catch (IOException e) {
+            LOGGER.error("Json String toMap error: {}", json, e);
+            return null;
+        }
+    }
+
+    /**
      * 将一个 object 转成键值数组, 一对键值放在相邻的位置.
      * [name1, value1, name2, value2, ..., nameN, valueN]
      */
