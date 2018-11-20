@@ -1,4 +1,4 @@
 rootProject.name = 'common'
-include 'common'
+include 'common-lang'
 include 'common-db-jpa'
 include 'common-db-mybatis'

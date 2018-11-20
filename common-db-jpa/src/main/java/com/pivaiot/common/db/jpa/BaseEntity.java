@@ -1,7 +1,7 @@
 package com.pivaiot.common.db.jpa;
 
-import com.pivaiot.common.data.ToData;
-import com.pivaiot.common.util.BeanUtil;
+import com.pivaiot.common.lang.data.ToData;
+import com.pivaiot.common.lang.util.BeanUtil;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
