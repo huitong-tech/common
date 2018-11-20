@@ -1,0 +1,15 @@
+dependencies {
+  compileOnly("org.projectlombok:lombok:$lombokVersion")
+  implementation("com.google.guava:guava:$guavaVersion")
+  implementation("org.apache.commons:commons-lang3:$commonsLang3Version")
+  implementation("eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion")
+  implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
+  compile("org.springframework:spring-beans:$springVersion")
+  implementation("org.slf4j:slf4j-api:$slf4jApiVersion")
+  implementation("dom4j:dom4j:$dom4jVersion")
+  implementation("commons-codec:commons-codec:$commonsCodecVersion")
+  implementation("joda-time:joda-time:$jodaTimeVersion")
+  implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
+
+  testCompile("junit:junit:$junitVersion")
+}

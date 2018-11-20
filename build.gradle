@@ -1,49 +1,33 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'maven'
+allprojects {
+  apply plugin: 'java'
+  apply plugin: 'eclipse'
+  apply plugin: 'maven'
 
-group = 'com.pivaiot.common'
-version = '1.0.6'
+  group = 'com.pivaiot.common'
+  version = '1.0.7'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
 
-// 依赖库的版本
-ext {
-  guavaVersion = '20.0'
-  bitwalkerUserAgentUtilsVersion = '1.21'
-  commonsLang3Version = '3.7'
-  lombokVersion = '1.16.22'
-  jpaApiVersion = '1.0.2.Final'
-  junitVersion = '4.12'
-  jacksonVersion = '2.9.6'
-  springVersion = '5.0.10.RELEASE'
-  slf4jApiVersion = '1.7.25'
-  commonsCodecVersion = '1.11'
-  jodaTimeVersion = '2.9.9'
-  lombokVersion = '1.18.0'
-  dom4jVersion = '1.6.1'
-  servletApiVersion = '4.0.1'
-}
+  ext {
+    guavaVersion = '20.0'
+    bitwalkerUserAgentUtilsVersion = '1.21'
+    commonsLang3Version = '3.7'
+    lombokVersion = '1.16.22'
+    jpaApiVersion = '1.0.2.Final'
+    junitVersion = '4.12'
+    jacksonVersion = '2.9.6'
+    springVersion = '5.0.10.RELEASE'
+    slf4jApiVersion = '1.7.25'
+    commonsCodecVersion = '1.11'
+    jodaTimeVersion = '2.9.9'
+    lombokVersion = '1.18.0'
+    dom4jVersion = '1.6.1'
+    servletApiVersion = '4.0.1'
+  }
 
-repositories {
+  repositories {
     mavenLocal()
     mavenCentral()
-}
-
-dependencies {
-  compileOnly("org.projectlombok:lombok:$lombokVersion")
-  implementation("com.google.guava:guava:$guavaVersion")
-  implementation("org.apache.commons:commons-lang3:$commonsLang3Version")
-  implementation("eu.bitwalker:UserAgentUtils:$bitwalkerUserAgentUtilsVersion")
-  implementation("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaApiVersion")
-  implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-  implementation("org.springframework:spring-beans:$springVersion")
-  implementation("org.slf4j:slf4j-api:$slf4jApiVersion")
-  implementation("dom4j:dom4j:$dom4jVersion")
-  implementation("commons-codec:commons-codec:$commonsCodecVersion")
-  implementation("joda-time:joda-time:$jodaTimeVersion")
-  implementation("javax.servlet:javax.servlet-api:$servletApiVersion")
-
-  testCompile("junit:junit:$junitVersion")
+  }
 }

@@ -1,0 +1,5 @@
+dependencies {
+  implementation project(":common")
+  compileOnly("org.projectlombok:lombok:$lombokVersion")
+  testCompile("junit:junit:$junitVersion")
+}

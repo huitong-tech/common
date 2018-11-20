@@ -1,0 +1,5 @@
+dependencies {
+  implementation project(":common")
+  compileOnly("org.projectlombok:lombok:$lombokVersion")
+  implementation("org.hibernate.javax.persistence:hibernate-jpa-2.1-api:$jpaApiVersion")
+}
