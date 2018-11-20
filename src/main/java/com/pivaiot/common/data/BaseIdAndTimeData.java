@@ -1,4 +1,4 @@
-package com.pivaiot.common.model;
+package com.pivaiot.common.data;
 
 
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.util.Date;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public abstract class BaseIdAndTimeModel extends BaseIdModel {
+public abstract class BaseIdAndTimeData extends BaseIdData {
     private Date createdTime;
     private Date updatedTime;
 }

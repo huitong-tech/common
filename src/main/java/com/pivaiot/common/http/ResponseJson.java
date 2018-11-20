@@ -1,7 +1,7 @@
 package com.pivaiot.common.http;
 
 
-import com.pivaiot.common.exception.DefaultException;
+import com.pivaiot.common.exception.CommonException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -30,11 +30,11 @@ public class ResponseJson<T> {
     }
 
     @SuppressWarnings("unchecked")
-    public static ResponseJson err(String name, DefaultException e) {
+    public static ResponseJson err(String name, CommonException e) {
         return new ResponseJson(null, name + "-" + e.getErrorCode(), e.getMessage(), null);
     }
 
     public static ResponseJson err(String name) {
-        return err(name, new DefaultException());
+        return err(name, new CommonException());
     }
 }

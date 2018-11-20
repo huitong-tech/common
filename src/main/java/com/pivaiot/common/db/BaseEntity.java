@@ -1,7 +1,7 @@
 package com.pivaiot.common.db;
 
+import com.pivaiot.common.data.ToData;
 import com.pivaiot.common.util.BeanUtil;
-import com.pivaiot.common.model.ToModel;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -26,7 +26,7 @@ import java.util.Date;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @MappedSuperclass
-public abstract class BaseEntity<T> implements ToModel<T>, Serializable {
+public abstract class BaseEntity<T> implements ToData<T>, Serializable {
 
     protected abstract Long generateId();
 
@@ -53,7 +53,7 @@ public abstract class BaseEntity<T> implements ToModel<T>, Serializable {
 
     @Override
     @SuppressWarnings("unchecked")
-    public T toModel() {
+    public T toData() {
         Type genType = getClass().getGenericSuperclass();
         Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
         Class<T> modelClass = (Class) params[0];
