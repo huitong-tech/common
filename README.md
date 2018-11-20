@@ -1,5 +1,9 @@
 # Common Libs for Pivaiot Projects
 
+## Build
+
+[![](https://jitpack.io/v/pivaiot/common.svg)](https://jitpack.io/#pivaiot/common)
+
 ## Purpose
 
 所有项目通用的部分
@@ -28,7 +32,7 @@
 
 ```
 	dependencies {
-	        implementation 'com.github.pivaiot:common:1.0.1'
+	        implementation 'com.github.pivaiot.common:common-lang:${version}'
 	}
 
 ```
