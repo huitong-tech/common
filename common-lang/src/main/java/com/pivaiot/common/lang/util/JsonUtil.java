@@ -99,6 +99,16 @@ public class JsonUtil {
         }
     }
 
+    public static <T> T fromPlainJson(String json, TypeReference typeReference) {
+        try {
+            T entity = mapper.readValue(json, typeReference);
+            return entity;
+        } catch (IOException e) {
+            LOGGER.error("json to object error", e);
+            return null;
+        }
+    }
+
     /**
      * Create a new ObjectMapper.
      * @return a new ObjectMapper object
