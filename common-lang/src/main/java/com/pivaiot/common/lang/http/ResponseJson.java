@@ -31,12 +31,12 @@ public class ResponseJson<T> {
 
     @SuppressWarnings("unchecked")
     public static ResponseJson err(CommonException e) {
-        return new ResponseJson(null, e.getErrorCode().getCode(), e.getMessage(), null);
+        return new ResponseJson(null, e.getErrorCode().getCode(), e.getErrorCode().getMessage(), null);
     }
 
     @SuppressWarnings("unchecked")
     public static ResponseJson err(CommonException e, Object meta) {
-        return new ResponseJson(null, e.getErrorCode().getCode(), e.getMessage(), meta);
+        return new ResponseJson(null, e.getErrorCode().getCode(), e.getErrorCode().getMessage(), meta);
     }
 
     public static ResponseJson err() {
