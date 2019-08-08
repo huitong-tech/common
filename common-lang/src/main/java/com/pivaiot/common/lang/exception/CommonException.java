@@ -9,7 +9,7 @@ public class CommonException extends RuntimeException {
     }
 
     public CommonException(ErrorCode errorCode) {
-        super(errorCode.getErrorCode());
+        super(errorCode.getCode());
         this.errorCode = errorCode;
     }
 

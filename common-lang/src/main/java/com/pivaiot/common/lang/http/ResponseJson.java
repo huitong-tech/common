@@ -30,11 +30,16 @@ public class ResponseJson<T> {
     }
 
     @SuppressWarnings("unchecked")
-    public static ResponseJson err(String name, CommonException e) {
-        return new ResponseJson(null, name + "-" + e.getErrorCode(), e.getMessage(), null);
+    public static ResponseJson err(CommonException e) {
+        return new ResponseJson(null, e.getErrorCode().getCode(), e.getMessage(), null);
     }
 
-    public static ResponseJson err(String name) {
-        return err(name, new CommonException());
+    @SuppressWarnings("unchecked")
+    public static ResponseJson err(CommonException e, Object meta) {
+        return new ResponseJson(null, e.getErrorCode().getCode(), e.getMessage(), meta);
+    }
+
+    public static ResponseJson err() {
+        return err(new CommonException());
     }
 }
